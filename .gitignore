@@ -46,3 +46,4 @@ jspm_packages/
 
 dist/
 coverage/
+.evidence/

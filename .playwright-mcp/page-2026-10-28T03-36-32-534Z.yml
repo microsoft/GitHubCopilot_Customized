@@ -1,0 +1,124 @@
+- generic [ref=f4e3]:
+  - navigation [ref=f4e4]:
+    - generic [ref=f4e6]:
+      - link "Copilot icon OctoCAT Supply Smart Cat Tech, Powered by AI" [ref=f4e8] [cursor=pointer]:
+        - /url: /
+        - img "Copilot icon" [ref=f4e9]
+        - generic [ref=f4e10]:
+          - text: OctoCAT Supply
+          - generic [ref=f4e11]: Smart Cat Tech, Powered by AI
+      - generic [ref=f4e13]:
+        - link "Home" [ref=f4e14] [cursor=pointer]:
+          - /url: /
+        - link "Products" [ref=f4e15] [cursor=pointer]:
+          - /url: /products
+        - link "About us" [ref=f4e16] [cursor=pointer]:
+          - /url: /about
+      - generic [ref=f4e17]:
+        - button "Toggle dark/light mode" [ref=f4e18] [cursor=pointer]
+        - link "Login" [ref=f4e21] [cursor=pointer]:
+          - /url: /login
+  - main [ref=f4e22]:
+    - generic [ref=f4e25]:
+      - heading "Products" [level=1] [ref=f4e74]
+      - textbox "Search products" [ref=f4e76]:
+        - /placeholder: Search products...
+        - text: snack
+      - generic [ref=f4e79]:
+        - generic [ref=f4e80]:
+          - generic [ref=f4e81]: Minimum price
+          - spinbutton "Minimum price" [ref=f4e82]: "30"
+        - generic [ref=f4e83]:
+          - generic [ref=f4e84]: Maximum price
+          - spinbutton "Maximum price" [ref=f4e85]: "40"
+        - generic [ref=f4e86]:
+          - checkbox "Discounted only" [checked] [active] [ref=f4e87]
+          - text: Discounted only
+        - generic [ref=f4e88]:
+          - generic [ref=f4e89]: Sort by
+          - combobox "Sort by" [ref=f4e90]:
+            - option "Default order"
+            - 'option "Name: A to Z"'
+            - 'option "Price: low to high"'
+            - 'option "Price: high to low" [selected]'
+      - paragraph [ref=f4e92]: 1 product found
+      - generic [ref=f4e256]:
+        - generic [ref=f4e257] [cursor=pointer]:
+          - img "SnackVault Puzzle Dispenser" [ref=f4e258]
+          - generic [ref=f4e259]: 25% OFF
+        - generic [ref=f4e260]:
+          - heading "SnackVault Puzzle Dispenser" [level=3] [ref=f4e261]
+          - paragraph [ref=f4e262]: Treat puzzle toy that evolves in difficulty with your cat's cleverness. AI engine auto-adjusts pathways and provides tips to the human if the cat cheats.
+          - generic [ref=f4e263]:
+            - generic [ref=f4e265]:
+              - generic [ref=f4e266]: $49.99
+              - generic [ref=f4e267]: $37.49
+            - generic [ref=f4e268]:
+              - generic [ref=f4e269]:
+                - button "Decrease quantity of SnackVault Puzzle Dispenser" [ref=f4e270] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f4e271]: "-"
+                - generic "Quantity of SnackVault Puzzle Dispenser" [ref=f4e272]: "0"
+                - button "Increase quantity of SnackVault Puzzle Dispenser" [ref=f4e273] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f4e274]: +
+              - button "Add 0 SnackVault Puzzle Dispenser to cart" [disabled] [ref=f4e275]: Add to Cart
+  - contentinfo [ref=f4e27]:
+    - generic [ref=f4e28]:
+      - generic [ref=f4e29]:
+        - generic [ref=f4e30]:
+          - heading "About" [level=2] [ref=f4e31]
+          - paragraph [ref=f4e32]: OctoCAT Supply is the leading provider of AI-powered smart products for your feline companions. Our innovative technology enhances your cat's wellbeing through intelligent monitoring, interactive entertainment, and personalized comfort solutions.
+        - generic [ref=f4e33]:
+          - heading "Account" [level=2] [ref=f4e34]
+          - list [ref=f4e35]:
+            - listitem [ref=f4e36]:
+              - link "My Cart" [ref=f4e37] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e38]:
+              - link "Checkout" [ref=f4e39] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e40]:
+              - link "Shopping Details" [ref=f4e41] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e42]:
+              - link "Order" [ref=f4e43] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e44]:
+              - link "Help Center" [ref=f4e45] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f4e46]:
+          - heading "Helpful Links" [level=2] [ref=f4e47]
+          - list [ref=f4e48]:
+            - listitem [ref=f4e49]:
+              - link "Services" [ref=f4e50] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e51]:
+              - link "Supports" [ref=f4e52] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e53]:
+              - link "Feedback" [ref=f4e54] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e55]:
+              - link "Terms & Conditions" [ref=f4e56] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e57]:
+              - link "Privacy Policy" [ref=f4e58] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f4e59]:
+          - heading "Social Media" [level=2] [ref=f4e60]
+          - list [ref=f4e61]:
+            - listitem [ref=f4e62]:
+              - link "Twitter" [ref=f4e63] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e64]:
+              - link "Facebook" [ref=f4e65] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e66]:
+              - link "Youtube" [ref=f4e67] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e68]:
+              - link "Linkedin" [ref=f4e69] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f4e70]:
+              - link "Instagram" [ref=f4e71] [cursor=pointer]:
+                - /url: "#"
+      - paragraph [ref=f4e73]: Copyright © 2025 OctoCAT Supply. All Rights Reserved

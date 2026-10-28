@@ -1,0 +1,82 @@
+- generic [ref=f1e3]:
+  - navigation [ref=f1e4]:
+    - generic [ref=f1e6]:
+      - link "Copilot icon OctoCAT Supply Smart Cat Tech, Powered by AI" [ref=f1e8] [cursor=pointer]:
+        - /url: /
+        - img "Copilot icon" [ref=f1e9]
+        - generic [ref=f1e10]:
+          - text: OctoCAT Supply
+          - generic [ref=f1e11]: Smart Cat Tech, Powered by AI
+      - generic [ref=f1e13]:
+        - link "Home" [ref=f1e14] [cursor=pointer]:
+          - /url: /
+        - link "Products" [ref=f1e15] [cursor=pointer]:
+          - /url: /products
+        - link "About us" [ref=f1e16] [cursor=pointer]:
+          - /url: /about
+      - generic [ref=f1e17]:
+        - button "Toggle dark/light mode" [ref=f1e18] [cursor=pointer]
+        - link "Login" [ref=f1e21] [cursor=pointer]:
+          - /url: /login
+  - main [ref=f1e22]
+  - contentinfo [ref=f1e27]:
+    - generic [ref=f1e28]:
+      - generic [ref=f1e29]:
+        - generic [ref=f1e30]:
+          - heading "About" [level=2] [ref=f1e31]
+          - paragraph [ref=f1e32]: OctoCAT Supply is the leading provider of AI-powered smart products for your feline companions. Our innovative technology enhances your cat's wellbeing through intelligent monitoring, interactive entertainment, and personalized comfort solutions.
+        - generic [ref=f1e33]:
+          - heading "Account" [level=2] [ref=f1e34]
+          - list [ref=f1e35]:
+            - listitem [ref=f1e36]:
+              - link "My Cart" [ref=f1e37] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e38]:
+              - link "Checkout" [ref=f1e39] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e40]:
+              - link "Shopping Details" [ref=f1e41] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e42]:
+              - link "Order" [ref=f1e43] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e44]:
+              - link "Help Center" [ref=f1e45] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f1e46]:
+          - heading "Helpful Links" [level=2] [ref=f1e47]
+          - list [ref=f1e48]:
+            - listitem [ref=f1e49]:
+              - link "Services" [ref=f1e50] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e51]:
+              - link "Supports" [ref=f1e52] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e53]:
+              - link "Feedback" [ref=f1e54] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e55]:
+              - link "Terms & Conditions" [ref=f1e56] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e57]:
+              - link "Privacy Policy" [ref=f1e58] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f1e59]:
+          - heading "Social Media" [level=2] [ref=f1e60]
+          - list [ref=f1e61]:
+            - listitem [ref=f1e62]:
+              - link "Twitter" [ref=f1e63] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e64]:
+              - link "Facebook" [ref=f1e65] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e66]:
+              - link "Youtube" [ref=f1e67] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e68]:
+              - link "Linkedin" [ref=f1e69] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f1e70]:
+              - link "Instagram" [ref=f1e71] [cursor=pointer]:
+                - /url: "#"
+      - paragraph [ref=f1e73]: Copyright © 2025 OctoCAT Supply. All Rights Reserved

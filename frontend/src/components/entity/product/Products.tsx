@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import { api } from '../../../api/config';
@@ -16,6 +17,24 @@ interface Product {
   discount?: number;
 }
 
+type ProductSort = 'name-asc' | 'price-asc' | 'price-desc';
+
+const discoveryParams = ['search', 'minPrice', 'maxPrice', 'discounted', 'sort'];
+
+const effectivePrice = (product: Product) => product.price * (1 - (product.discount ?? 0));
+
+const parsePrice = (value: string | null) => {
+  if (value === null || value.trim() === '') {
+    return undefined;
+  }
+
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : undefined;
+};
+
+const isProductSort = (value: string | null): value is ProductSort =>
+  value === 'name-asc' || value === 'price-asc' || value === 'price-desc';
+
 const fetchProducts = async (): Promise<Product[]> => {
   const { data } = await axios.get(`${api.baseURL}${api.endpoints.products}`);
   return data;
@@ -23,16 +42,68 @@ const fetchProducts = async (): Promise<Product[]> => {
 
 export default function Products() {
   const [quantities, setQuantities] = useState<Record<number, number>>({});
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchTerm = searchParams.get('search') ?? '';
+  const minPriceValue = searchParams.get('minPrice') ?? '';
+  const maxPriceValue = searchParams.get('maxPrice') ?? '';
+  const minPrice = parsePrice(searchParams.get('minPrice'));
+  const maxPrice = parsePrice(searchParams.get('maxPrice'));
+  const discountedOnly = searchParams.get('discounted') === 'true';
+  const sortValue = searchParams.get('sort');
+  const sort = isProductSort(sortValue) ? sortValue : '';
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showModal, setShowModal] = useState(false);
   const { data: products, isLoading, error } = useQuery('products', fetchProducts);
   const { darkMode } = useTheme();
 
-  const filteredProducts = products?.filter(product => 
-    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const priceValidationMessage =
+    (minPrice !== undefined && minPrice < 0) || (maxPrice !== undefined && maxPrice < 0)
+      ? 'Prices cannot be negative.'
+      : minPrice !== undefined && maxPrice !== undefined && minPrice > maxPrice
+        ? 'Minimum price cannot be greater than maximum price.'
+        : '';
+
+  const updateSearchParam = (key: string, value: string, replace = false) => {
+    setSearchParams(current => {
+      const next = new URLSearchParams(current);
+      if (value) {
+        next.set(key, value);
+      } else {
+        next.delete(key);
+      }
+      return next;
+    }, { replace });
+  };
+
+  const resetDiscovery = () => {
+    setSearchParams(current => {
+      const next = new URLSearchParams(current);
+      discoveryParams.forEach(param => next.delete(param));
+      return next;
+    });
+  };
+
+  const filteredProducts = (products ?? []).filter(product => {
+    const normalizedSearch = searchTerm.toLocaleLowerCase();
+    const matchesSearch = product.name.toLocaleLowerCase().includes(normalizedSearch) ||
+      product.description.toLocaleLowerCase().includes(normalizedSearch) ||
+      product.sku.toLocaleLowerCase().includes(normalizedSearch);
+    const isDiscounted = (product.discount ?? 0) > 0;
+    const price = effectivePrice(product);
+    const matchesPrice = Boolean(priceValidationMessage) ||
+      ((minPrice === undefined || price >= minPrice) && (maxPrice === undefined || price <= maxPrice));
+
+    return matchesSearch && (!discountedOnly || isDiscounted) && matchesPrice;
+  });
+
+  const visibleProducts = [...filteredProducts];
+  if (sort === 'name-asc') {
+    visibleProducts.sort((first, second) => first.name.localeCompare(second.name, undefined, { sensitivity: 'base' }));
+  } else if (sort === 'price-asc') {
+    visibleProducts.sort((first, second) => effectivePrice(first) - effectivePrice(second));
+  } else if (sort === 'price-desc') {
+    visibleProducts.sort((first, second) => effectivePrice(second) - effectivePrice(first));
+  }
 
   const handleQuantityChange = (productId: number, change: number) => {
     setQuantities(prev => ({
@@ -91,7 +162,7 @@ export default function Products() {
               type="text"
               placeholder="Search products..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => updateSearchParam('search', e.target.value, true)}
               className={`w-full px-4 py-2 ${darkMode ? 'bg-gray-800 text-light border-gray-700' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors duration-300`}
               aria-label="Search products"
             />
@@ -108,8 +179,88 @@ export default function Products() {
             </svg>
           </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+              <label htmlFor="minimum-price" className={`block mb-1 ${darkMode ? 'text-light' : 'text-gray-700'}`}>Minimum price</label>
+              <input
+                id="minimum-price"
+                type="number"
+                min="0"
+                step="0.01"
+                value={minPriceValue}
+                onChange={event => updateSearchParam('minPrice', event.target.value, true)}
+                aria-invalid={Boolean(priceValidationMessage)}
+                aria-describedby={priceValidationMessage ? 'price-validation' : undefined}
+                className={`w-full px-3 py-2 ${darkMode ? 'bg-gray-800 text-light border-gray-700' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none`}
+              />
+            </div>
+            <div>
+              <label htmlFor="maximum-price" className={`block mb-1 ${darkMode ? 'text-light' : 'text-gray-700'}`}>Maximum price</label>
+              <input
+                id="maximum-price"
+                type="number"
+                min="0"
+                step="0.01"
+                value={maxPriceValue}
+                onChange={event => updateSearchParam('maxPrice', event.target.value, true)}
+                aria-invalid={Boolean(priceValidationMessage)}
+                aria-describedby={priceValidationMessage ? 'price-validation' : undefined}
+                className={`w-full px-3 py-2 ${darkMode ? 'bg-gray-800 text-light border-gray-700' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none`}
+              />
+            </div>
+            <label className={`flex items-center gap-2 ${darkMode ? 'text-light' : 'text-gray-700'}`}>
+              <input
+                type="checkbox"
+                checked={discountedOnly}
+                onChange={event => updateSearchParam('discounted', event.target.checked ? 'true' : '')}
+                className="h-4 w-4 accent-primary"
+              />
+              Discounted only
+            </label>
+            <div>
+              <label htmlFor="product-sort" className={`block mb-1 ${darkMode ? 'text-light' : 'text-gray-700'}`}>Sort by</label>
+              <select
+                id="product-sort"
+                value={sort}
+                onChange={event => updateSearchParam('sort', event.target.value)}
+                className={`w-full px-3 py-2 ${darkMode ? 'bg-gray-800 text-light border-gray-700' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none`}
+              >
+                <option value="">Default order</option>
+                <option value="name-asc">Name: A to Z</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+              </select>
+            </div>
+          </div>
+
+          {priceValidationMessage && (
+            <p id="price-validation" role="alert" className="text-red-500">
+              {priceValidationMessage}
+            </p>
+          )}
+
+          <div className="flex items-center justify-between gap-4">
+            <p aria-live="polite" aria-atomic="true" className={`${darkMode ? 'text-light' : 'text-gray-700'}`}>
+              {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'} found
+            </p>
+          </div>
+
+          {filteredProducts.length === 0 && (
+            <div className="text-center py-10">
+              <h2 className={`text-xl font-semibold ${darkMode ? 'text-light' : 'text-gray-800'}`}>No products found</h2>
+              <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mt-2`}>Try adjusting your search or filters.</p>
+              <button
+                type="button"
+                onClick={resetDiscovery}
+                className="mt-4 px-4 py-2 rounded-lg bg-primary hover:bg-accent text-white transition-colors"
+              >
+                Reset filters
+              </button>
+            </div>
+          )}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filteredProducts?.map(product => (
+            {visibleProducts.map(product => (
               <div key={product.productId} className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(118,184,82,0.3)] flex flex-col`}>
                 <div 
                   className={`relative h-56 ${darkMode ? 'bg-gradient-to-t from-gray-700 to-gray-800' : 'bg-gradient-to-t from-gray-100 to-white'} transition-colors duration-300 cursor-pointer`}
@@ -120,9 +271,9 @@ export default function Products() {
                     alt={product.name}
                     className="w-full h-full object-contain p-2"
                   />
-                  {product.discount && (
+                  {(product.discount ?? 0) > 0 && (
                     <div className="absolute top-8 left-0 bg-primary text-white px-3 py-1 -rotate-90 transform -translate-x-5 shadow-md">
-                      {Math.round(product.discount * 100)}% OFF
+                      {Math.round((product.discount ?? 0) * 100)}% OFF
                     </div>
                   )}
                 </div>
@@ -132,10 +283,10 @@ export default function Products() {
                   <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4 flex-grow transition-colors duration-300`}>{product.description}</p>
                   <div className="space-y-4 mt-auto">
                     <div className="flex justify-between items-center">
-                      {product.discount ? (
+                      {(product.discount ?? 0) > 0 ? (
                         <div>
                           <span className="text-gray-500 line-through text-sm mr-2">${product.price.toFixed(2)}</span>
-                          <span className="text-primary text-xl font-bold">${(product.price * (1 - product.discount)).toFixed(2)}</span>
+                          <span className="text-primary text-xl font-bold">${(product.price * (1 - (product.discount ?? 0))).toFixed(2)}</span>
                         </div>
                       ) : (
                         <span className="text-primary text-xl font-bold">${product.price.toFixed(2)}</span>

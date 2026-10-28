@@ -1,0 +1,301 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "Copilot icon OctoCAT Supply Smart Cat Tech, Powered by AI" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img "Copilot icon" [ref=e9]
+        - generic [ref=e10]:
+          - text: OctoCAT Supply
+          - generic [ref=e11]: Smart Cat Tech, Powered by AI
+      - generic [ref=e13]:
+        - link "Home" [ref=e14] [cursor=pointer]:
+          - /url: /
+        - link "Products" [ref=e15] [cursor=pointer]:
+          - /url: /products
+        - link "About us" [ref=e16] [cursor=pointer]:
+          - /url: /about
+      - generic [ref=e17]:
+        - button "Toggle dark/light mode" [active] [ref=e18] [cursor=pointer]
+        - link "Login" [ref=e21] [cursor=pointer]:
+          - /url: /login
+  - main [ref=e22]:
+    - generic [ref=e25]:
+      - heading "Products" [level=1] [ref=e26]
+      - textbox "Search products" [ref=e28]:
+        - /placeholder: Search products...
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: Minimum price
+          - spinbutton "Minimum price" [ref=e34]
+        - generic [ref=e35]:
+          - generic [ref=e36]: Maximum price
+          - spinbutton "Maximum price" [ref=e37]
+        - generic [ref=e38]:
+          - checkbox "Discounted only" [ref=e39]
+          - text: Discounted only
+        - generic [ref=e40]:
+          - generic [ref=e41]: Sort by
+          - combobox "Sort by" [ref=e42]:
+            - option "Default order" [selected]
+            - 'option "Name: A to Z"'
+            - 'option "Price: low to high"'
+            - 'option "Price: high to low"'
+      - paragraph [ref=e44]: 12 products found
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47] [cursor=pointer]:
+            - img "SmartFeeder One" [ref=e48]
+            - generic [ref=e49]: 25% OFF
+          - generic [ref=e50]:
+            - heading "SmartFeeder One" [level=3] [ref=e51]
+            - paragraph [ref=e52]: This AI-powered feeder learns your cat's snack schedule based on nap cycles and mealtime habits. It detects overeating, undernapping, and auto-updates a Feline Health Repo.
+            - generic [ref=e53]:
+              - generic [ref=e55]:
+                - generic [ref=e56]: $129.99
+                - generic [ref=e57]: $97.49
+              - generic [ref=e58]:
+                - generic [ref=e59]:
+                  - button "Decrease quantity of SmartFeeder One" [ref=e60] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e61]: "-"
+                  - generic "Quantity of SmartFeeder One" [ref=e62]: "0"
+                  - button "Increase quantity of SmartFeeder One" [ref=e63] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e64]: +
+                - button "Add 0 SmartFeeder One to cart" [disabled] [ref=e65]: Add to Cart
+        - generic [ref=e66]:
+          - generic [ref=e67] [cursor=pointer]:
+            - img "AutoClean Litter Dome" [ref=e68]
+            - generic [ref=e69]: 25% OFF
+          - generic [ref=e70]:
+            - heading "AutoClean Litter Dome" [level=3] [ref=e71]
+            - paragraph [ref=e72]: A self-cleaning litter box that detects patterns in your cat's... commits. Sends you a health report and Slack alert if things look off.
+            - generic [ref=e73]:
+              - generic [ref=e75]:
+                - generic [ref=e76]: $199.99
+                - generic [ref=e77]: $149.99
+              - generic [ref=e78]:
+                - generic [ref=e79]:
+                  - button "Decrease quantity of AutoClean Litter Dome" [ref=e80] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e81]: "-"
+                  - generic "Quantity of AutoClean Litter Dome" [ref=e82]: "0"
+                  - button "Increase quantity of AutoClean Litter Dome" [ref=e83] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e84]: +
+                - button "Add 0 AutoClean Litter Dome to cart" [disabled] [ref=e85]: Add to Cart
+        - generic [ref=e86]:
+          - img "CatFlix Entertainment Portal" [ref=e88] [cursor=pointer]
+          - generic [ref=e89]:
+            - heading "CatFlix Entertainment Portal" [level=3] [ref=e90]
+            - paragraph [ref=e91]: On-demand laser shows, motion videos, and bird-watching streams - customized per cat using AI interest tracking. Think Netflix, but for felines.
+            - generic [ref=e92]:
+              - generic [ref=e93]: $89.99
+              - generic [ref=e95]:
+                - generic [ref=e96]:
+                  - button "Decrease quantity of CatFlix Entertainment Portal" [ref=e97] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e98]: "-"
+                  - generic "Quantity of CatFlix Entertainment Portal" [ref=e99]: "0"
+                  - button "Increase quantity of CatFlix Entertainment Portal" [ref=e100] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e101]: +
+                - button "Add 0 CatFlix Entertainment Portal to cart" [disabled] [ref=e102]: Add to Cart
+        - generic [ref=e103]:
+          - img "PawTrack Smart Collar" [ref=e105] [cursor=pointer]
+          - generic [ref=e106]:
+            - heading "PawTrack Smart Collar" [level=3] [ref=e107]
+            - paragraph [ref=e108]: GPS and activity tracker with AI-powered mood detection based on tail position, purring frequency, and movement patterns. Syncs with your phone for walk stats and zoomie alerts.
+            - generic [ref=e109]:
+              - generic [ref=e110]: $79.99
+              - generic [ref=e112]:
+                - generic [ref=e113]:
+                  - button "Decrease quantity of PawTrack Smart Collar" [ref=e114] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e115]: "-"
+                  - generic "Quantity of PawTrack Smart Collar" [ref=e116]: "0"
+                  - button "Increase quantity of PawTrack Smart Collar" [ref=e117] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e118]: +
+                - button "Add 0 PawTrack Smart Collar to cart" [disabled] [ref=e119]: Add to Cart
+        - generic [ref=e120]:
+          - img "SleepNest ThermoPod" [ref=e122] [cursor=pointer]
+          - generic [ref=e123]:
+            - heading "SleepNest ThermoPod" [level=3] [ref=e124]
+            - paragraph [ref=e125]: A smart bed that adjusts its temperature, lighting, and white noise based on your cat's REM cycles. Auto-generates nap metrics in JSON.
+            - generic [ref=e126]:
+              - generic [ref=e127]: $149.99
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - button "Decrease quantity of SleepNest ThermoPod" [ref=e131] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e132]: "-"
+                  - generic "Quantity of SleepNest ThermoPod" [ref=e133]: "0"
+                  - button "Increase quantity of SleepNest ThermoPod" [ref=e134] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e135]: +
+                - button "Add 0 SleepNest ThermoPod to cart" [disabled] [ref=e136]: Add to Cart
+        - generic [ref=e137]:
+          - img "ClawMate Auto Groomer" [ref=e139] [cursor=pointer]
+          - generic [ref=e140]:
+            - heading "ClawMate Auto Groomer" [level=3] [ref=e141]
+            - paragraph [ref=e142]: Your cat brushes itself. This AI station detects which areas need grooming, dispenses treats for patience, and logs grooming history to your pet portal.
+            - generic [ref=e143]:
+              - generic [ref=e144]: $119.99
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - button "Decrease quantity of ClawMate Auto Groomer" [ref=e148] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e149]: "-"
+                  - generic "Quantity of ClawMate Auto Groomer" [ref=e150]: "0"
+                  - button "Increase quantity of ClawMate Auto Groomer" [ref=e151] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e152]: +
+                - button "Add 0 ClawMate Auto Groomer to cart" [disabled] [ref=e153]: Add to Cart
+        - generic [ref=e154]:
+          - generic [ref=e155] [cursor=pointer]:
+            - img "Smart Fountain Flow+" [ref=e156]
+            - generic [ref=e157]: 25% OFF
+          - generic [ref=e158]:
+            - heading "Smart Fountain Flow+" [level=3] [ref=e159]
+            - paragraph [ref=e160]: This water fountain adjusts flow patterns based on time of day, cat hydration levels, and even playfulness. Uses facial recognition to distinguish multiple cats.
+            - generic [ref=e161]:
+              - generic [ref=e163]:
+                - generic [ref=e164]: $69.99
+                - generic [ref=e165]: $52.49
+              - generic [ref=e166]:
+                - generic [ref=e167]:
+                  - button "Decrease quantity of Smart Fountain Flow+" [ref=e168] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e169]: "-"
+                  - generic "Quantity of Smart Fountain Flow+" [ref=e170]: "0"
+                  - button "Increase quantity of Smart Fountain Flow+" [ref=e171] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e172]: +
+                - button "Add 0 Smart Fountain Flow+ to cart" [disabled] [ref=e173]: Add to Cart
+        - generic [ref=e174]:
+          - img "ScratchPad Pro" [ref=e176] [cursor=pointer]
+          - generic [ref=e177]:
+            - heading "ScratchPad Pro" [level=3] [ref=e178]
+            - paragraph [ref=e179]: More than a scratcher - this one detects scratching habits, gamifies it with leaderboard stats for multi-cat homes, and awards digital badges.
+            - generic [ref=e180]:
+              - generic [ref=e181]: $59.99
+              - generic [ref=e183]:
+                - generic [ref=e184]:
+                  - button "Decrease quantity of ScratchPad Pro" [ref=e185] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e186]: "-"
+                  - generic "Quantity of ScratchPad Pro" [ref=e187]: "0"
+                  - button "Increase quantity of ScratchPad Pro" [ref=e188] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e189]: +
+                - button "Add 0 ScratchPad Pro to cart" [disabled] [ref=e190]: Add to Cart
+        - generic [ref=e191]:
+          - img "ChirpCam Window Mount" [ref=e193] [cursor=pointer]
+          - generic [ref=e194]:
+            - heading "ChirpCam Window Mount" [level=3] [ref=e195]
+            - paragraph [ref=e196]: Motion-activated smart cam that records wildlife outside the window and sends curated 'Birdflix' highlights to your cat's personal feed.
+            - generic [ref=e197]:
+              - generic [ref=e198]: $99.99
+              - generic [ref=e200]:
+                - generic [ref=e201]:
+                  - button "Decrease quantity of ChirpCam Window Mount" [ref=e202] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e203]: "-"
+                  - generic "Quantity of ChirpCam Window Mount" [ref=e204]: "0"
+                  - button "Increase quantity of ChirpCam Window Mount" [ref=e205] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e206]: +
+                - button "Add 0 ChirpCam Window Mount to cart" [disabled] [ref=e207]: Add to Cart
+        - generic [ref=e208]:
+          - generic [ref=e209] [cursor=pointer]:
+            - img "SnackVault Puzzle Dispenser" [ref=e210]
+            - generic [ref=e211]: 25% OFF
+          - generic [ref=e212]:
+            - heading "SnackVault Puzzle Dispenser" [level=3] [ref=e213]
+            - paragraph [ref=e214]: Treat puzzle toy that evolves in difficulty with your cat's cleverness. AI engine auto-adjusts pathways and provides tips to the human if the cat cheats.
+            - generic [ref=e215]:
+              - generic [ref=e217]:
+                - generic [ref=e218]: $49.99
+                - generic [ref=e219]: $37.49
+              - generic [ref=e220]:
+                - generic [ref=e221]:
+                  - button "Decrease quantity of SnackVault Puzzle Dispenser" [ref=e222] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e223]: "-"
+                  - generic "Quantity of SnackVault Puzzle Dispenser" [ref=e224]: "0"
+                  - button "Increase quantity of SnackVault Puzzle Dispenser" [ref=e225] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e226]: +
+                - button "Add 0 SnackVault Puzzle Dispenser to cart" [disabled] [ref=e227]: Add to Cart
+        - generic [ref=e228]:
+          - img "DoorDash Pet Portal" [ref=e230] [cursor=pointer]
+          - generic [ref=e231]:
+            - heading "DoorDash Pet Portal" [level=3] [ref=e232]
+            - paragraph [ref=e233]: Smart cat door with facial recognition and time-based access. Prevents midnight squirrel parties and tracks in/out commits to your dashboard.
+            - generic [ref=e234]:
+              - generic [ref=e235]: $159.99
+              - generic [ref=e237]:
+                - generic [ref=e238]:
+                  - button "Decrease quantity of DoorDash Pet Portal" [ref=e239] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e240]: "-"
+                  - generic "Quantity of DoorDash Pet Portal" [ref=e241]: "0"
+                  - button "Increase quantity of DoorDash Pet Portal" [ref=e242] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e243]: +
+                - button "Add 0 DoorDash Pet Portal to cart" [disabled] [ref=e244]: Add to Cart
+        - generic [ref=e245]:
+          - img "ZoomieTracker AI Mat" [ref=e247] [cursor=pointer]
+          - generic [ref=e248]:
+            - heading "ZoomieTracker AI Mat" [level=3] [ref=e249]
+            - paragraph [ref=e250]: A motion-sensing mat that detects zoomies, spins up chase lights, and logs agility bursts to a weekly health report. Yes, it graphs zoomies per hour.
+            - generic [ref=e251]:
+              - generic [ref=e252]: $79.99
+              - generic [ref=e254]:
+                - generic [ref=e255]:
+                  - button "Decrease quantity of ZoomieTracker AI Mat" [ref=e256] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e257]: "-"
+                  - generic "Quantity of ZoomieTracker AI Mat" [ref=e258]: "0"
+                  - button "Increase quantity of ZoomieTracker AI Mat" [ref=e259] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e260]: +
+                - button "Add 0 ZoomieTracker AI Mat to cart" [disabled] [ref=e261]: Add to Cart
+  - contentinfo [ref=e262]:
+    - generic [ref=e263]:
+      - generic [ref=e264]:
+        - generic [ref=e265]:
+          - heading "About" [level=2] [ref=e266]
+          - paragraph [ref=e267]: OctoCAT Supply is the leading provider of AI-powered smart products for your feline companions. Our innovative technology enhances your cat's wellbeing through intelligent monitoring, interactive entertainment, and personalized comfort solutions.
+        - generic [ref=e268]:
+          - heading "Account" [level=2] [ref=e269]
+          - list [ref=e270]:
+            - listitem [ref=e271]:
+              - link "My Cart" [ref=e272] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e273]:
+              - link "Checkout" [ref=e274] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e275]:
+              - link "Shopping Details" [ref=e276] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e277]:
+              - link "Order" [ref=e278] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e279]:
+              - link "Help Center" [ref=e280] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e281]:
+          - heading "Helpful Links" [level=2] [ref=e282]
+          - list [ref=e283]:
+            - listitem [ref=e284]:
+              - link "Services" [ref=e285] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e286]:
+              - link "Supports" [ref=e287] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e288]:
+              - link "Feedback" [ref=e289] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e290]:
+              - link "Terms & Conditions" [ref=e291] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e292]:
+              - link "Privacy Policy" [ref=e293] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e294]:
+          - heading "Social Media" [level=2] [ref=e295]
+          - list [ref=e296]:
+            - listitem [ref=e297]:
+              - link "Twitter" [ref=e298] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e299]:
+              - link "Facebook" [ref=e300] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e301]:
+              - link "Youtube" [ref=e302] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e303]:
+              - link "Linkedin" [ref=e304] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e305]:
+              - link "Instagram" [ref=e306] [cursor=pointer]:
+                - /url: "#"
+      - paragraph [ref=e308]: Copyright © 2025 OctoCAT Supply. All Rights Reserved
